@@ -42,7 +42,7 @@
      * Clear current dictionary
      */
     Dictionary.prototype.reset = function() {
-        this.set({})
+        this.set({});
     };
 
     /**
@@ -59,9 +59,7 @@
         }
 
         for (var i = 0; i < params.length; i++) {
-            source = source.replace(new RegExp("\\{" + i + "\\}", "g"), function() {
-                return params[i];
-            });
+            source = source.replace(new RegExp("\\{" + i + "\\}", "g"), params[i]);
         }
         return source;
     };
@@ -80,6 +78,6 @@
     window.Dictionary = Dictionary;
     window.dictionary = new Dictionary();
     window.__ = function(source) {
-        return dictionary.translate(source);
+        return window.dictionary.translate(source);
     };
 })(window, document);
