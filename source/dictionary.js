@@ -1,4 +1,5 @@
-(function (window, document) {
+(function (window) {
+
     /**
      * Dictionary Class
      * @constructor
@@ -77,7 +78,7 @@
 
     window.Dictionary = Dictionary;
     window.dictionary = new Dictionary();
-    window.__ = function(source) {
-        return window.dictionary.translate(source);
+    window.__ = function(source, params) {
+        return window.dictionary.translate(source, params);
     };
-})(window, document);
+})(window);
